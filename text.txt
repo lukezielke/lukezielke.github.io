@@ -2,10 +2,10 @@
 <span id="a">root@lukezielke</span>:<span id="b">~</span><span id="c">$</span> cat about.txt<br/><br/>
 
 <p>Hi!</p>
-<p>My name is Luke Zielke and I am a Software Developer from Germany.<br>
+<p>My name is <span id="c">Luke Zielke</span> and I am a Software Developer from Germany.<br>
 You can check out all of my projects on my <a href="https://github.com/lukezielke" target="_blank"> GitHub Page</a>.<br>
 Feel free to contribute!<br>
 Any questions?<br>
-Contact me via email at lukezielke@protonmail.com.</p>
+Contact me via email at <a href="mailto:lukezielke@protonmail.com">lukezielke@protonmail.com</a>.</p>
 
 <p>Cheers and keep on hacking!</p>
