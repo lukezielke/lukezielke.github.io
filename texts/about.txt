@@ -1,0 +1,11 @@
+Hi!
+
+My name is Luke Zielke and I am a Software Developer from Germany.
+I am currently studying IT Systems Engineering at Hasso Plattner Institute.
+You can check out all of my projects on my GitHub Page: https://github.com/lukezielke
+Feel free to contribute!
+
+Any questions? Got a Job?
+Contact me via email at lukezielke@protonmail.com
+
+Cheers and keep on hacking!

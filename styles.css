@@ -1,0 +1,125 @@
+body {
+    background-color: #002b36; /* Solarized base03 */
+    color: #839496; /* Solarized base0 */
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* Reset body + ensure full height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* prevents scrollbars */
+}
+
+/* Terminal container */
+#terminal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+body, #terminal, #output {
+    overflow-x: hidden;
+}
+
+/* Prevent long lines from breaking layout */
+#output {
+    word-break: break-word;
+}
+
+
+/* Output area (scrolls internally) */
+#output {
+    flex: 1;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    font-size: 14px;
+    padding-right: 4px; /* avoids overlap with scrollbar */
+}
+
+
+#input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#prompt {
+    margin-right: 5px;
+}
+
+#command-input {
+    background: transparent;
+    border: none;
+    color: #859900; /* green - Solarized */
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    flex: 1;
+    caret-color: #859900;
+}
+
+.user { color: #859900; font-weight: bold; }   /* Green */
+.host { color: #268bd2; }                      /* Blue */
+.path { color: #b58900; }                      /* Yellow */
+.dollar { color: #839496; }                    /* Base0 */
+
+a {
+    color: #2aa198; /* Cyan */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+.file { color: #839496; }                       /* Default text */
+.directory { color: #268bd2; font-weight: bold; } /* Blue */
+.executable { color: #cb4b16; font-weight: bold; } /* Orange */
+.error { color: #dc322f; font-weight: bold; }      /* Red */
+.success { color: #859900; font-weight: bold; }    /* Green */
+.info { color: #b58900; }                          /* Yellow */
+.echo-line {
+    margin-top: 4px;
+}
+
+.prompt-text {
+    color: #586e75; /* Dimmed gray-blue */
+    margin-right: 5px;
+}
+
+.echo {
+    color: #859900; /* Solarized green */
+    font-weight: bold;
+}
+
+/* Output of the command */
+.command-output {
+    color: #839496; /* Base0 default text */
+    padding-left: 2ch;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.typing {
+    color: #586e75; /* Dimmed base01 */
+}

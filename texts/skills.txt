@@ -1,0 +1,15 @@
+Programming Languages:
+- Python
+- Dart
+- C/C++
+- JavaScript
+- HTML/CSS
+
+Frameworks & Technologies:
+- Flutter
+- Git
+- Linux/Unix
+
+Interests: 
+- Scraping
+- Security

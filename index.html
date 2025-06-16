@@ -1,14 +1,20 @@
-<html> 
-  <head> 
-    <title>Luke Zielke</title> 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
-    <link rel="stylesheet" type="text/css" href="index.css">
-  </head> 
-  <body> 
-    <script type="text/javascript" src="index.js"> 
-    </script> 
-    <div id="console"></div> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke Zielke</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="terminal">
+        <div id="output"></div>
+        <div id="input-line">
+            <span id="prompt"></span>
+            <input type="text" id="command-input" autocomplete="off" spellcheck="false">
+        </div>
+    </div>
     
-    </script>
-  </body> 
-</html> 
+    <script src="script.js"></script>
+</body>
+</html>
