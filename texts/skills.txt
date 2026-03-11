@@ -1,15 +1,24 @@
-Programming Languages:
-- Python
-- Dart
-- C/C++
-- JavaScript
-- HTML/CSS
+Languages
+─────────
+  Python        ████████████░░  expert
+  C / C++       █████████░░░░░  advanced
+  JavaScript    ████████░░░░░░  advanced
+  Dart          ███████░░░░░░░  proficient
+  HTML / CSS    ████████░░░░░░  advanced
+  Bash          ██████░░░░░░░░  proficient
 
-Frameworks & Technologies:
-- Flutter
-- Git
-- Linux/Unix
+Frameworks & Tools
+──────────────────
+  Flutter   · cross-platform mobile & desktop apps
+  FastAPI   · Python REST APIs
+  Git       · version control & open-source workflow
+  Linux     · daily driver (Arch btw)
+  Docker    · containerisation & deployment
+  SQL       · relational databases (SQLite, PostgreSQL)
 
-Interests: 
-- Scraping
-- Security
+Interests
+─────────
+  Security        · CTFs, pentesting, vulnerability research
+  Web Scraping    · data collection & automation
+  Systems Prog.   · OS internals, low-level performance
+  Open Source     · contribute & learn in public

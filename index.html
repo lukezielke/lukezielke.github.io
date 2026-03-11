@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="robots" content="noindex">
+    <meta name="description" content="Luke Zielke - Software Developer & IT Systems Engineering student at Hasso Plattner Institute.">
+    <meta name="theme-color" content="#0d1117">
     <title>Luke Zielke</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="terminal">
-        <div id="output"></div>
+        <div id="output" role="log" aria-live="polite" aria-label="Terminal output"></div>
         <div id="input-line">
-            <span id="prompt"></span>
-            <input type="text" id="command-input" autocomplete="off" spellcheck="false">
+            <span id="prompt" aria-hidden="true"></span>
+            <input
+                type="text"
+                id="command-input"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+                aria-label="Terminal input"
+            >
         </div>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>

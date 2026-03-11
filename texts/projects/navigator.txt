@@ -1,1 +1,12 @@
-Test
+Navigator
+═════════
+DB-Navigator like app built with Flutter & Dart.
+
+Features
+  · Better & more modern UI
+  · Cross Platform
+  · Works with all trains and busses in Germany
+
+Status   work in progress
+Stack    Flutter · Dart
+Repo     https://github.com/41-61-72-6F-6E/Navigator

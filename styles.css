@@ -1,125 +1,241 @@
-body {
-    background-color: #002b36; /* Solarized base03 */
-    color: #839496; /* Solarized base0 */
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 20px;
-    overflow-x: hidden;
-    height: 100vh;
-}
+/* ============================================================
+   Luke Zielke — Terminal Portfolio
+   Theme: GitHub Dark + terminal green accents
+   ============================================================ */
 
-/* Reset body + ensure full height */
-html, body {
+/* === Reset & base === */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden; /* prevents scrollbars */
 }
 
-/* Terminal container */
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background: #0d1117;
+}
+
+body {
+    font-family: 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #c9d1d9;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* === CRT scanline overlay === */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 0, 0, 0.04) 3px,
+        rgba(0, 0, 0, 0.04) 4px
+    );
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* === Terminal wrapper === */
 #terminal {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 20px;
+    height: 100vh;
+    width: 100%;
+    padding: 20px 26px;
+    background: #0d1117;
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.6);
 }
 
-body, #terminal, #output {
-    overflow-x: hidden;
-}
-
-/* Prevent long lines from breaking layout */
-#output {
-    word-break: break-word;
-}
-
-
-/* Output area (scrolls internally) */
+/* === Output area === */
 #output {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     white-space: pre-wrap;
-    line-height: 1.5;
-    font-size: 14px;
-    padding-right: 4px; /* avoids overlap with scrollbar */
+    word-break: break-word;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    scroll-behavior: smooth;
 }
 
+/* scrollbar */
+#output::-webkit-scrollbar          { width: 5px; }
+#output::-webkit-scrollbar-track    { background: transparent; }
+#output::-webkit-scrollbar-thumb    { background: #21262d; border-radius: 3px; }
+#output::-webkit-scrollbar-thumb:hover { background: #30363d; }
 
+/* === Input row === */
 #input-line {
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    flex-shrink: 0;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #161b22;
 }
 
 #prompt {
-    margin-right: 5px;
+    white-space: nowrap;
+    user-select: none;
+    margin-right: 6px;
 }
 
 #command-input {
+    flex: 1;
+    min-width: 0;
     background: transparent;
     border: none;
-    color: #859900; /* green - Solarized */
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
     outline: none;
-    flex: 1;
-    caret-color: #859900;
+    font-family: inherit;
+    font-size: inherit;
+    color: #79c0ff;
+    font-weight: 600;
+    caret-color: #3fb950;
 }
 
-.user { color: #859900; font-weight: bold; }   /* Green */
-.host { color: #268bd2; }                      /* Blue */
-.path { color: #b58900; }                      /* Yellow */
-.dollar { color: #839496; }                    /* Base0 */
+/* === Prompt segments === */
+.user   { color: #3fb950; font-weight: 700; }
+.host   { color: #58a6ff; }
+.path   { color: #e3b341; }
+.dollar { color: #6e7681; margin-left: 2px; }
 
+/* === Text classes === */
+.error   { color: #f85149; font-weight: 700; }
+.success { color: #3fb950; font-weight: 700; }
+.info    { color: #e3b341; }
+.warn    { color: #d29922; }
+.muted   { color: #484f58; }
+.bold    { font-weight: 700; }
+.dim     { opacity: 0.55; }
+
+/* file / directory / exec listing */
+.file       { color: #c9d1d9; }
+.directory  { color: #58a6ff; font-weight: 700; }
+.executable { color: #3fb950; font-weight: 700; }
+.symlink    { color: #bc8cff; }
+
+/* links */
 a {
-    color: #2aa198; /* Cyan */
+    color: #58a6ff;
+    text-decoration: none;
+}
+a:hover {
+    color: #79c0ff;
     text-decoration: underline;
 }
 
-a:hover {
-    color: #ffffff;
-}
-
-.file { color: #839496; }                       /* Default text */
-.directory { color: #268bd2; font-weight: bold; } /* Blue */
-.executable { color: #cb4b16; font-weight: bold; } /* Orange */
-.error { color: #dc322f; font-weight: bold; }      /* Red */
-.success { color: #859900; font-weight: bold; }    /* Green */
-.info { color: #b58900; }                          /* Yellow */
+/* === Command echo line === */
 .echo-line {
-    margin-top: 4px;
+    display: block;
+    margin-bottom: 3px;
 }
 
 .prompt-text {
-    color: #586e75; /* Dimmed gray-blue */
-    margin-right: 5px;
+    color: #30363d;
+    user-select: none;
+    margin-right: 4px;
 }
 
 .echo {
-    color: #859900; /* Solarized green */
-    font-weight: bold;
+    color: #79c0ff;
+    font-weight: 700;
 }
 
-/* Output of the command */
+/* === Command output block === */
 .command-output {
-    color: #839496; /* Base0 default text */
-    padding-left: 2ch;
-    margin-bottom: 10px;
+    color: #c9d1d9;
+    margin-bottom: 14px;
     white-space: pre-wrap;
+    display: block;
 }
 
-
-.cursor {
-    animation: blink 1s infinite;
+/* === Welcome / banner ASCII art === */
+.ascii-banner {
+    color: #3fb950;
+    font-weight: 700;
+    line-height: 1.15;
+    display: block;
+    margin-bottom: 6px;
 }
 
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+/* === Neofetch layout === */
+.neofetch-wrap {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
 }
 
-.typing {
-    color: #586e75; /* Dimmed base01 */
+.neofetch-logo {
+    color: #58a6ff;
+    font-weight: 700;
+    line-height: 1.2;
+    flex-shrink: 0;
+}
+
+.neofetch-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.nf-row {}
+.nf-label { color: #58a6ff; font-weight: 700; }
+.nf-sep   { color: #6e7681; }
+.nf-value { color: #c9d1d9; }
+
+/* colour swatches at end of neofetch */
+.nf-colors span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+/* === Tree command === */
+.tree-dir  { color: #58a6ff; font-weight: 700; }
+.tree-file { color: #c9d1d9; }
+.tree-pipe { color: #484f58; }
+
+/* === help table === */
+.help-cmd     { color: #3fb950; font-weight: 700; min-width: 10ch; display: inline-block; }
+.help-sep     { color: #484f58; padding: 0 6px; }
+.help-desc    { color: #8b949e; }
+.help-section { color: #e3b341; font-weight: 700; margin-top: 8px; display: block; }
+
+/* === Blinking block cursor for typing output === */
+.t-cursor {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    vertical-align: text-bottom;
+    background: #3fb950;
+    animation: blink-cursor 1s step-end infinite;
+    margin-left: 1px;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* === Text selection === */
+::selection {
+    background: #1f6feb;
+    color: #e6edf3;
+}
+
+/* === Mobile === */
+@media (max-width: 640px) {
+    body        { font-size: 12px; }
+    #terminal   { padding: 12px 14px; }
+    .neofetch-wrap { flex-direction: column; gap: 8px; }
 }
