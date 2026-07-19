@@ -1,0 +1,25 @@
+title: Luke Zielke
+description: Software developer interested in security, automation, and systems programming.
+url: "https://lukezielke.com"
+baseurl: ""
+lang: en
+author:
+  name: Luke Zielke
+  email: lukezielke@protonmail.com
+  github: lukezielke
+
+permalink: /blog/:title/
+timezone: Europe/Berlin
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - vendor
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,32 @@
+---
+layout: default
+title: Notes
+description: Notes on software, security, experiments, and things learned along the way.
+permalink: /blog/
+---
+
+<header class="page-hero">
+  <p class="section-index">~/notes</p>
+  <h1 class="page-title">Thinking in public.</h1>
+  <p class="page-intro">Notes on software, security, experiments, and things learned along the way. No content calendar. No growth hacks.</p>
+</header>
+
+<section class="blog-index" aria-label="Blog posts">
+  <div class="notes-list">
+    {% for post in site.posts %}
+      <a class="note-row" href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+        <span>
+          <strong>{{ post.title }}</strong>
+          {% if post.description %}<small>{{ post.description }}</small>{% endif %}
+        </span>
+        <span class="note-row__arrow" aria-hidden="true">→</span>
+      </a>
+    {% else %}
+      <div class="empty-state">
+        <span class="prompt" aria-hidden="true">$</span> find ./notes -type f<br>
+        <span class="muted-copy">No entries yet. Check back soon.</span>
+      </div>
+    {% endfor %}
+  </div>
+</section>

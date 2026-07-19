@@ -1,30 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="robots" content="noindex">
-    <meta name="description" content="Luke Zielke - Software Developer & IT Systems Engineering student at Hasso Plattner Institute.">
-    <meta name="theme-color" content="#0d1117">
-    <title>Luke Zielke</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="terminal">
-        <div id="output" role="log" aria-live="polite" aria-label="Terminal output"></div>
-        <div id="input-line">
-            <span id="prompt" aria-hidden="true"></span>
-            <input
-                type="text"
-                id="command-input"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="off"
-                spellcheck="false"
-                aria-label="Terminal input"
-            >
-        </div>
+---
+layout: default
+title: Home
+description: Luke Zielke is a software developer in Germany interested in security, automation, and systems programming.
+---
+
+<section class="hero" aria-labelledby="intro-title">
+  <div class="hero-kicker reveal" style="--delay: 0ms">
+    <span class="prompt" aria-hidden="true">$</span>
+    <span>whoami</span>
+  </div>
+
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1 id="intro-title" class="reveal" style="--delay: 80ms">
+        Luke Zielke<span class="cursor" aria-hidden="true"></span>
+      </h1>
+      <p class="hero-role reveal" style="--delay: 140ms">
+        Software developer building useful things<br>
+        across systems, apps, and the web.
+      </p>
     </div>
-    <script src="script.js"></script>
-</body>
-</html>
+
+    <aside class="system-card reveal" style="--delay: 200ms" aria-label="Quick profile">
+      <div class="system-card__top">
+        <span>profile.json</span>
+        <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+      <dl class="system-data">
+        <div><dt>location</dt><dd>Germany</dd></div>
+        <div><dt>studying</dt><dd>IT Systems Engineering @ HPI</dd></div>
+        <div><dt>focus</dt><dd>security · automation · systems</dd></div>
+        <div><dt>local_time</dt><dd id="local-time">--:--:-- CET</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <div class="hero-actions reveal" style="--delay: 260ms">
+    <a class="button button--primary" href="#work"><span aria-hidden="true">./</span> view_work</a>
+    <a class="button" href="mailto:lukezielke@protonmail.com">send_email<span aria-hidden="true"> ↗</span></a>
+  </div>
+</section>
+
+<div class="rule" aria-hidden="true"><span>01</span></div>
+
+<section class="section" id="about" aria-labelledby="about-title">
+  <header class="section-heading">
+    <p class="section-index">01 / about</p>
+    <h2 id="about-title">I like knowing how things work.</h2>
+  </header>
+  <div class="section-body about-grid">
+    <p class="large-copy">
+      I’m a software developer and IT Systems Engineering student at the
+      Hasso Plattner Institute in Potsdam.
+    </p>
+    <div class="prose muted-copy">
+      <p>
+        I enjoy working close to the metal, from C and C++ to cross-platform
+        applications with Flutter. I’m especially drawn to security,
+        automation, and open-source software.
+      </p>
+      <p>
+        This is where I keep a small record of what I build, learn, and find
+        worth writing down.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="rule" aria-hidden="true"><span>02</span></div>
+
+<section class="section" id="work" aria-labelledby="work-title">
+  <header class="section-heading">
+    <p class="section-index">02 / selected work</p>
+    <h2 id="work-title">Things I’ve been building.</h2>
+  </header>
+
+  <div class="project-list">
+    <a class="project" href="https://github.com/41-61-72-6F-6E/Navigator" target="_blank" rel="noreferrer">
+      <span class="project__number" aria-hidden="true">01</span>
+      <span class="project__content">
+        <span class="project__title">Navigator</span>
+        <span class="project__description">A modern, cross-platform companion for public transport across Germany.</span>
+        <span class="tag-row"><span>Flutter</span><span>Dart</span><span>WIP</span></span>
+      </span>
+      <span class="project__arrow" aria-hidden="true">↗</span>
+    </a>
+
+    <a class="project" href="https://github.com/lukezielke" target="_blank" rel="noreferrer">
+      <span class="project__number" aria-hidden="true">02</span>
+      <span class="project__content">
+        <span class="project__title">Experiments & open source</span>
+        <span class="project__description">Smaller tools, prototypes, and code that I’m learning in public.</span>
+        <span class="tag-row"><span>GitHub</span><span>Open source</span></span>
+      </span>
+      <span class="project__arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
+
+<div class="rule" aria-hidden="true"><span>03</span></div>
+
+<section class="section" id="stack" aria-labelledby="stack-title">
+  <header class="section-heading">
+    <p class="section-index">03 / stack</p>
+    <h2 id="stack-title">Tools, languages, interests.</h2>
+  </header>
+
+  <div class="stack-grid">
+    <article class="stack-card">
+      <span class="stack-card__icon" aria-hidden="true">{ }</span>
+      <h3>Languages</h3>
+      <p>Python, C/C++, JavaScript, Dart, SQL, Bash</p>
+    </article>
+    <article class="stack-card">
+      <span class="stack-card__icon" aria-hidden="true">&gt;_</span>
+      <h3>Environment</h3>
+      <p>Linux, Git, Docker, Flutter, FastAPI</p>
+    </article>
+    <article class="stack-card">
+      <span class="stack-card__icon" aria-hidden="true">[*]</span>
+      <h3>Interests</h3>
+      <p>Security, automation, systems, open source</p>
+    </article>
+  </div>
+</section>
+
+<div class="rule" aria-hidden="true"><span>04</span></div>
+
+<section class="section" id="notes" aria-labelledby="notes-title">
+  <header class="section-heading section-heading--split">
+    <div>
+      <p class="section-index">04 / latest notes</p>
+      <h2 id="notes-title">Writing from the workbench.</h2>
+    </div>
+    <a class="text-link" href="{{ '/blog/' | relative_url }}">all notes <span aria-hidden="true">→</span></a>
+  </header>
+
+  <div class="notes-list">
+    {% for post in site.posts limit:3 %}
+      <a class="note-row" href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+        <span>
+          <strong>{{ post.title }}</strong>
+          {% if post.description %}<small>{{ post.description }}</small>{% endif %}
+        </span>
+        <span class="note-row__arrow" aria-hidden="true">→</span>
+      </a>
+    {% else %}
+      <div class="empty-state">
+        <span class="prompt" aria-hidden="true">$</span> ls ./notes<br>
+        <span class="muted-copy">No entries yet. Check back soon.</span>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="contact-block" id="contact" aria-labelledby="contact-title">
+  <p class="section-index">05 / contact</p>
+  <h2 id="contact-title">Have an interesting problem?</h2>
+  <p>Job offers, collaborations, and good hacking ideas are all welcome.</p>
+  <div class="contact-actions">
+    <a href="mailto:lukezielke@protonmail.com">lukezielke@protonmail.com <span aria-hidden="true">↗</span></a>
+    <button class="copy-button" type="button" data-copy="lukezielke@protonmail.com" aria-label="Copy email address">copy</button>
+  </div>
+</section>
