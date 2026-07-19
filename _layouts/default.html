@@ -18,8 +18,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image:alt" content="Luke Zielke — software developer">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
-    <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
-    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}?v={{ site.time | date: '%s' }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <title>{% if page.title and page.title != 'Home' %}{{ page.title }} — {% endif %}{{ site.title }}</title>
   </head>
   <body>
@@ -56,6 +56,6 @@
       </footer>
     </div>
 
-    <script src="{{ '/script.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
   </body>
 </html>
